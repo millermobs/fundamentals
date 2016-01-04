@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+
+import skilstak.colors as c
+import time
+
+def print_colored(word):
+    """Makes each character a different color"""
+    for char in word:
+        print(c.rc() + char + c.x, end='')
+
+
+def nyanword(message):
+    """Print hello world to the console in random colors."""
+    try:
+        print(c.clear)
+        while True: 
+            print(c.rc() + "Hello" + c.rc() + " " + who + "!", end=" ")
+    except KeyboardInterrupt:
+        exit()
+
+def charcolor(message):
+    """Print hello world to the console with each character having a different color."""
+    try:
+        print(c.clear)
+        while True:
+            print_colored(c.clear + c.multi + "Hello" + " " + who + "!")
+    except KeyboardInterrupt:
+        exit()
+
+def boring(message):
+    try:
+        print("Hello" + " " + who + "!")
+    except KeyboardInterrupt:
+        exit()
+
+if __name__ == "__main__":
+    import sys
+    
+    who = 'world'
+    option = ''
+    message = ''
+
+    if len(sys.argv) > 2:
+        option = sys.argv[1]
+        who = sys.argv[2] 
+    elif len(sys.argv) == 2:
+        if sys.argv[1].startswith('-'):
+            option = sys.argv[1]
+        else:
+            who = sys.argv[1]
+    
+    message = 'Hello ' + who + '!'
+
+    try:
+        if option == '-m':
+            charcolor(message)
+        elif option == '-c':
+            nyanword(message)
+        else:
+            boring(message)
+    except KeyboardInterrupt:
+        exit()

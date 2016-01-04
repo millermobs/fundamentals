@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+import skilstak.colors as c
+
+"""Hello Program"""
+
+def print_plain(message):
+    print(message)
+
+def print_forever(message):
+    while True:
+        print(message, end=" ")
+
+def print_random_color(message):
+    print(c.random() + message)
+
+def print_random_color_forever(message):
+    while True:
+        print(c.random()+ message, end=" ")
+
+if __name__ == '__main__':
+    import sys
+    
+    who = "world"
+
+    if len(sys.argv) == 2:
+        who = sys.argv[1]
+    
+    print_plain("Hello " + who + "!")
+
