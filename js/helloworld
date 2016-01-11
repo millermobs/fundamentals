@@ -2,4 +2,21 @@
 
 'use strict'
 
-console.log("hello world");
+var c = require("skilstak-colors");
+
+var plainHello = function () {
+  console.log(c.clear + c.rc() + "hello world" + c.x);
+}
+
+var foreverHello = function () {
+  while (true){
+    console.log(c.clear + c.rc() + "hello" + c.rc() + " world" + c.x);
+  }
+}
+
+var multiHello = function () {
+  console.log(c.clear + c.multi("hello world") + c.x);
+}
+
+foreverHello();
+
