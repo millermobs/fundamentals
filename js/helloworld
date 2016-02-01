@@ -4,23 +4,25 @@
 
 var c = require("skilstak-colors");
 
-var printHello = function () {
-  console.log("hello world");
+var printHello = function (name) {
+  console.log("Hello " + name);
 }
 
-var printForever = function () {
+var printForever = function (name) {
   while (true){
-    console.log(c.clear + c.rc() + "hello" + c.rc() + " world" + c.x);
+    console.log(c.clear + c.rc() + "Hello " + c.rc() + name + c.x);
   }
 }
 
-var printMulti = function () {
-  console.log(c.clear + c.multi("hello world") + c.x);
+var printMulti = function (name) {
+  console.log(c.clear + c.multi("Hello " + name) + c.x);
 }
 
-var printColored = function () {
-  console.log(c.rc() + "Hello World" + c.x);
+var printColored = function (name) {
+  console.log(c.rc() + "Hello " + c.rc() + name + c.x);
 }
 
-printMulti();
+var name = process.argv[2];
+
+printHello(name);
 
