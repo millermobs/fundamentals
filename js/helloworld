@@ -22,7 +22,92 @@ var printColored = function (name) {
   console.log(c.rc() + "Hello " + c.rc() + name + c.x);
 }
 
-var name = process.argv[2];
+/// Defaults
+var name = "World"; 
+var option = "";
 
-printHello(name);
+
+
+if (process.argv[2][0] === "-") {
+  option = process.argv[2];
+  name = process.argv[3];
+}
+
+else {
+ name = process.argv[2];
+}
+
+if (option == "-m") {
+ printMulti(name);
+}  
+
+if (option == "-f") {
+ printForever(name);
+}
+
+/// printHello(name);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
